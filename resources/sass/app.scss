@@ -1,3 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 @import '~bootstrap/scss/bootstrap';
+
+$navBar : #1E2632;
+$background: #F7F8F9;
+$text: #3A3C42;
+
+body{
+    background-color: $background;
+    color: $text;
+}
