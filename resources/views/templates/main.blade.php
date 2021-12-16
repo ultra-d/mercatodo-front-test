@@ -31,15 +31,19 @@
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
                     @if (Route::has('login'))
-                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block" style="float: right">
                         @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                            <a href="{{ url('/home') }}">Home</a>
+                            <a href="#"onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                Logout</a>
+                            <form id="logout-form" action="{{ route('logout')}}" method="POST" style="display: none">@csrf</form>
                         @else
-                        <a href="{{ route('login') }}" style="text-align: right">Log in</a>
+                            <a href="{{ route('login') }}" style="text-align: right">Log in</a>
                         
-                        @if (Route::has('register'))
-                        <a href="{{ route('register') }}" style="text-align: right">Register</a>
-                        @endif
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" style="text-align: right">Register</a>
+                            @endif
                         @endauth
                     </div>
                     @endif
